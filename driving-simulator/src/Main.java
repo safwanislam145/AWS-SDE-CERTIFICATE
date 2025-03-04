@@ -6,13 +6,13 @@ public class Main {
         Car car = new Car();
         boolean exit = false;
 
-        while (!exit) {
+        while(!exit) {
             System.out.println("1. Start the car");
-            System.out.println("2. Select a gear");
+            System.out.println("2. Select gear(P, D, R)");
             System.out.println("3. Accelerate");
             System.out.println("4. Brake");
             System.out.println("5. Exit");
-            System.out.print("Choose an option: ");
+            System.out.println("Choose an option:");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -20,7 +20,7 @@ public class Main {
                     car.start();
                     break;
                 case 2:
-                    System.out.print("Enter gear (P, D, R): ");
+                    System.out.println("Enter gear (P, D, R):");
                     String gear = scanner.next();
                     car.selectGear(gear);
                     break;
@@ -32,13 +32,12 @@ public class Main {
                     break;
                 case 5:
                     exit = true;
-                    System.out.println("Goodbye!");
+                    System.out.println("Exiting Car Control System.");
                     break;
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
-
         scanner.close();
     }
 }
