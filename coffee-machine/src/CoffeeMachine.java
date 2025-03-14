@@ -6,7 +6,7 @@ public class CoffeeMachine {
         
         // create a scanner object to read input
         Scanner scanner = new Scanner(System.in);
-
+        CoffeeMaker coffeeMaker = new CoffeeMaker();
         while (true) {
             System.out.println("Welcome to the Coffee Machine!");
             System.out.println("Select an option:");
@@ -31,12 +31,11 @@ public class CoffeeMachine {
                     int numberOfShots = scanner.nextInt();
 
                     Espresso myEspresso = new Espresso(espressoName, espressoRoast, espressoPrice, numberOfShots);
-                    myEspresso.grindBeans();
-                    myEspresso.brewCoffee();
+                    // myEspresso.grindBeans();
+                    // myEspresso.brewCoffee();
+                    // myEspresso.printInfo();
+                    coffeeMaker.prepareCoffee(myEspresso);
                     myEspresso.printInfo();
-                    myEspresso.printEspressoDetails();
-
-
 
                     break;
                 
@@ -65,11 +64,11 @@ public class CoffeeMachine {
                     }
 
                     Latte myLatte = new Latte(latteName, latteRoast, lattePrice, milkType, syrupFlavor);
-                    myLatte.grindBeans();
-                    myLatte.brewCoffee();
+                    // myLatte.grindBeans();
+                    // myLatte.brewCoffee();
+                    // myLatte.printInfo();
+                    coffeeMaker.prepareCoffee(myLatte);
                     myLatte.printInfo();
-                    myLatte.printLatteDetails();
-
                     break;
                 
                 case 3:
