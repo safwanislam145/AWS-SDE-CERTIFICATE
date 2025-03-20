@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SideKick extends Robot {
+public class SideKick extends Robot implements KungFuSkills{
     
     Scanner keyboard;
 
@@ -9,6 +9,7 @@ public class SideKick extends Robot {
         keyboard = new Scanner(System.in);
     }
 
+    @Override
     // method to set choice
     public void setChoice() {
         System.out.println("*** SideKick Menu ***");
@@ -21,7 +22,7 @@ public class SideKick extends Robot {
         setModeOfOperation(choice);
     }
 
-
+    @Override
     // method to take action
     public void takeAction() {
         switch(getModeOfOperation()) {
@@ -58,4 +59,11 @@ public class SideKick extends Robot {
         System.out.println("Cook the food");
         System.out.println("Go back to Tone..");
     }
+
+    @Override
+    public void kungFuProtection() {
+        System.out.println("SideKick is protecting Toni");
+    }
+
+    
 }
